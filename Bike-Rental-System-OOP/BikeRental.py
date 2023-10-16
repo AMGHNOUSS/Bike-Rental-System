@@ -11,3 +11,20 @@ class BikeRental():
     def displaystock(self):
         """Display content of bikes"""
         print(f"We have currently {self.stock} bikes available to rent.")
+
+    def rentBikeOnHourly(self, n):
+        """Rent a bike on hourly basis"""
+        if (n <= 0):
+            print("The number should be positive.")
+            return False
+        elif (n > self.stock):
+            print(f"Sorry! We have currently {self.stock} bikes available to rent.")
+            return False
+        else:
+            dt = datetime.datetime.now()
+            print("You have rented a {} bike(s) on hourly basis today at {} hours.".format(n,dt.hour))
+            print("You will be charged $5 for each hour per bike.")
+            print("We hope that you enjoy our service.")
+            
+            self.stock -= n
+            return dt
