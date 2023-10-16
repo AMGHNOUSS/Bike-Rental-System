@@ -16,7 +16,7 @@ if __name__ == "__main__":
         if result == 1:
             rb.displaystock()
         elif result == 2:
-            pass
+            rb.rentBikeOnHourly(2)
         elif result == 3:
             pass
         elif result == 4:
