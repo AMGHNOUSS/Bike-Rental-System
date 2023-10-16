@@ -9,4 +9,4 @@ class BikeRental():
         self.stock = 100
 
     def displaystock(self):
-        print("We have currently {self.stock} bikes available to rent.")
+        print(f"We have currently {self.stock} bikes available to rent.")
