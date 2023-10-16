@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-
+from BikeRental import BikeRental
 # The main program.
 if __name__ == "__main__":
+    rb = BikeRental()
     while True:
         print("1- See available bikes on the shop")
         print("2- Rent bikes on hourly basis $5 per hour.")
@@ -13,7 +14,7 @@ if __name__ == "__main__":
 
         result = int(input("Your Choice:"))
         if result == 1:
-            pass
+            rb.displaystock()
         elif result == 2:
             pass
         elif result == 3:
