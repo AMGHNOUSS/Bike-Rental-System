@@ -78,7 +78,11 @@ class BikeRental():
             baisis = 60
             result = result / 168
 
-        cost = result * baisis
+        cost = result * baisis * numOfBike
+        
+        if (3 <= numOfBike <= 5):
+            print("You are eligible for Family rental promotion of 30% discount")
+            cost = cost * 0.7
         print("Thanks for returning your bike. Hope you enjoyed our service!")
         print(f"That would be ${cost}")
 
