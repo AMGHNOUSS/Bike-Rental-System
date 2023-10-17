@@ -10,4 +10,18 @@ class Customer():
         self.rentalTime = rt
         self.rentalBasis = rb
         self.fullName = fn
-        self.password = p    
+        self.password = p
+
+    def requestBike(self):
+        """Request a Bike"""
+
+        bikes = input("How many bikes would you like to rent?")
+        
+        if bikes <= 0:
+            print("That's not a positive integer!")
+        else:
+            self.bikes = bikes
+        
+        self.fullName = str(input("Your full name:"))
+
+        return self.bikes
