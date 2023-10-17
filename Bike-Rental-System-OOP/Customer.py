@@ -13,9 +13,14 @@ class Customer():
         self.fullName = fn
         self.password = p
 
-    def requestBike(self):
+    def requestBike(self, rb):
         """Request a Bike"""
-
+        if  rb == 2:
+            self.rentalBasis = 5
+        elif rb == 3:
+            self.rentalBasis = 20
+        elif rb == 4:
+            self.rentalBasis = 60
         bikes = input("How many bikes would you like to rent?")
         
         if bikes <= 0:
@@ -25,12 +30,13 @@ class Customer():
         
         self.fullName = str(input("Your full name:"))
         self.password = int(self.generatePassword())
+        print(f"This your password {self.password} remember it.")
 
         return self.bikes
     
     def generatePassword(self):
         """Generate a password for custmer"""
-        all_code = '0123456789'
+        all_code = '123456789'
         index = len(all_code)
         code = ''
         for  i in range(4):
