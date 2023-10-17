@@ -62,3 +62,24 @@ class BikeRental():
             
             self.stock -= n
             return dt
+    
+    def returnBike(self, numOfBike, rentBaisis, dtOld):
+        """Reuturn a bike """
+
+        dtNew = datetime.datetime.now()
+        result = dtNew.hour - dtOld.hour
+
+        if rentBaisis == 2:
+            baisis = 5
+        elif rentBaisis == 3:
+            baisis = 20
+            result = result / 24
+        elif rentBaisis == 4:
+            baisis = 60
+            result = result / 168
+
+        cost = result * baisis
+        print("Thanks for returning your bike. Hope you enjoyed our service!")
+        print(f"That would be ${cost}")
+
+        self.stock += numOfBike
