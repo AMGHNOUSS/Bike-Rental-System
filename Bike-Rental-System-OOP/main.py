@@ -12,16 +12,16 @@ if __name__ == "__main__":
         print("6- Exit")
         print()
 
-        result = int(input("Your Choice:"))
-        if result == 1:
+        choix = int(input("Your Choice:"))
+        if choix == 1:
             rb.displaystock()
-        elif result == 2:
-            rb.rentBikeOnHourly(2)
-        elif result == 3:
-            rb.rentBikeOnDaily(3)
-        elif result == 4:
-            rb.rentBikeOnDaily(1)
-        elif result == 5:
-            pass
-        elif result == 6:
+        elif choix == 2:
+            dateRental = rb.rentBikeOnHourly(2)
+        elif choix == 3:
+            dateRental = rb.rentBikeOnDaily(3)
+        elif choix == 4:
+            dateRental = rb.rentBikeOnDaily(1)
+        elif choix == 5:
+            rb.returnBike(3, choix, dateRental)
+        elif choix == 6:
             break
