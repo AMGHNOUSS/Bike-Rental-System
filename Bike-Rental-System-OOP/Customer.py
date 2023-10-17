@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+import random
 
 class Customer():
     """Class Customer define request of Customer"""
@@ -23,5 +24,16 @@ class Customer():
             self.bikes = bikes
         
         self.fullName = str(input("Your full name:"))
+        self.password = int(self.generatePassword())
 
         return self.bikes
+    
+    def generatePassword(self):
+        """Generate a password for custmer"""
+        all_code = '0123456789'
+        index = len(all_code)
+        code = ''
+        for  i in range(4):
+            num = random.randint(0,index)
+            code += all_code[num]
+        return code
