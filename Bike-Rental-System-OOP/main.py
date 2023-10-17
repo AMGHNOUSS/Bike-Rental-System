@@ -20,7 +20,7 @@ if __name__ == "__main__":
         elif result == 3:
             rb.rentBikeOnDaily(3)
         elif result == 4:
-            pass
+            rb.rentBikeOnDaily(1)
         elif result == 5:
             pass
         elif result == 6:
