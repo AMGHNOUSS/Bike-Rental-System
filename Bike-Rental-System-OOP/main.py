@@ -39,8 +39,9 @@ if __name__ == "__main__":
         elif choix == 5:
             print(listCustomer)
             rem = cus.returnBike(listCustomer)
-            listCustomer.pop(rem[0])
-            rb.returnBike(rem[1], rem[2], rem[3])
+            if rem:
+                listCustomer.pop(rem[0])
+                rb.returnBike(rem[1], rem[2], rem[3])
         elif choix == 6:
             break
         else:

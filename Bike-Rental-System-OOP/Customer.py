@@ -62,3 +62,4 @@ class Customer():
         if not found:
             print()
             print("User not found or password is incorrect.")
+            return None
