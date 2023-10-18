@@ -26,7 +26,7 @@ class Customer():
             self.bikes = bikes
             self.fullName = str(input("Your full name: "))
             self.password = int(self.generatePassword())
-            print(f"This your password {self.password} remember it.")
+            print(f"This your password {self.password} remember it.\n")
             self.rentalTime = datetime.datetime.now()
             dict = {
                 'fullName': self.fullName,
@@ -47,5 +47,18 @@ class Customer():
             code += all_code[num]
         return code
     
-    def returnBike(self):
+    def returnBike(self, dict):
         """Functon for rerurn a Bike"""
+        name = str(input("what's your full name: "))
+        pswd = int(input("Your password: "))
+
+        print()
+        i = 0
+        for item in dict:
+            if name == dict['fullName'] and pswd == dict['password']:
+                print(f"you rental {item['bikes']} bike(s).")
+                bike = item['bikes']
+                rentBaisis = item['rentalBasis']  
+                dtOld = item['rentalTime']
+            i += 1
+            return [i, bike, rentBaisis, dtOld]
