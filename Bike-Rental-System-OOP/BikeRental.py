@@ -20,7 +20,7 @@ class BikeRental():
         else:
             print("You have rented a {} bike(s) on hourly basis today at {} hours.".format(n,dt.hour))
             print("You will be charged $5 for each hour per bike.")
-            print("We hope that you enjoy our service.")
+            print("We hope that you enjoy our service.\n")
             
             self.stock -= n
     
@@ -32,7 +32,7 @@ class BikeRental():
         else:
             print(f"You have rented a {n} bike(s) on daily basis today at {dt.month}/{dt.day}.")
             print("You will be charged $20 for each day per bike.")
-            print("We hope that you enjoy our service.")
+            print("We hope that you enjoy our service.\n")
             
             self.stock -= n
     
@@ -44,7 +44,7 @@ class BikeRental():
         else:
             print(f"You have rented a {n} bike(s) on weekly basis today at {dt.month}/{dt.day}.")
             print("You will be charged $60 for each day per bike.")
-            print("We hope that you enjoy our service.")
+            print("We hope that you enjoy our service.\n")
             
             self.stock -= n
     
@@ -54,16 +54,7 @@ class BikeRental():
         dtNew = datetime.datetime.now()
         result = dtNew.hour - dtOld.hour
 
-        if rentBaisis == 2:
-            baisis = 5
-        elif rentBaisis == 3:
-            baisis = 20
-            result = result / 24
-        elif rentBaisis == 4:
-            baisis = 60
-            result = result / 168
-
-        cost = result * baisis * numOfBike
+        cost = result * rentBaisis * numOfBike
         
         if (3 <= numOfBike <= 5):
             print("You are eligible for Family rental promotion of 30% discount")
