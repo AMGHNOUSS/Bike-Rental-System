@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 from BikeRental import BikeRental
 from Customer import Customer
+import os
+import time
+
 # The main program.
 if __name__ == "__main__":
     rb = BikeRental()
@@ -19,7 +22,7 @@ if __name__ == "__main__":
         print("\t ====================================================================")
         print()
 
-        choix = int(input("Your Choice:"))
+        choix = int(input("Your Choice: "))
         if choix == 1:
             rb.displaystock()
         elif choix == 2:
@@ -40,3 +43,5 @@ if __name__ == "__main__":
             rb.returnBike(rem[1], rem[2], rem[3])
         elif choix == 6:
             break
+        time.sleep(10)
+        os.system('cls' if os.name == 'nt' else 'clear')
