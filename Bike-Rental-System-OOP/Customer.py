@@ -40,7 +40,7 @@ class Customer():
     def generatePassword(self):
         """Generate a password for custmer"""
         all_code = '123456789'
-        index = len(all_code)
+        index = len(all_code) - 1
         code = ''
         for  i in range(4):
             num = random.randint(0,index)
@@ -49,16 +49,16 @@ class Customer():
     
     def returnBike(self, dict):
         """Functon for rerurn a Bike"""
-        name = str(input("what's your full name: "))
+        name = str(input("What's your full name: "))
         pswd = int(input("Your password: "))
 
-        print()
+        found = False  # A flag to check if the user was found
         i = 0
-        for item in dict:
-            if name == dict['fullName'] and pswd == dict['password']:
-                print(f"you rental {item['bikes']} bike(s).")
-                bike = item['bikes']
-                rentBaisis = item['rentalBasis']  
-                dtOld = item['rentalTime']
+        for user in dict:
+            if user['fullName'] == name and user['password'] == pswd:
+                found = True
+                return [i, user['bikes'], user['rentalBasis'], user['rentalTime']]
             i += 1
-            return [i, bike, rentBaisis, dtOld]
+        if not found:
+            print()
+            print("User not found or password is incorrect.")
