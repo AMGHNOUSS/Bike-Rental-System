@@ -56,6 +56,7 @@ class BikeRental():
 
         cost = result * rentBaisis * numOfBike
         
+        print()
         if (3 <= numOfBike <= 5):
             print("You are eligible for Family rental promotion of 30% discount")
             cost = cost * 0.7
