@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import random
+import datetime
 
 class Customer():
     """Class Customer define request of Customer"""
@@ -27,12 +28,18 @@ class Customer():
             print("That's not a positive integer!")
         else:
             self.bikes = bikes
-        
-        self.fullName = str(input("Your full name:"))
-        self.password = int(self.generatePassword())
-        print(f"This your password {self.password} remember it.")
-
-        return self.bikes
+            self.fullName = str(input("Your full name: "))
+            self.password = int(self.generatePassword())
+            print(f"This your password {self.password} remember it.")
+            self.rentalTime = datetime.datetime.now()
+            dict = {
+                'fullName': self.fullName,
+                'password': self.password,
+                'bikes': self.bikes,
+                'rentalTime': self.rentalTime,
+                'rentalBasis': self.rentalBasis
+            }
+            return dict
     
     def generatePassword(self):
         """Generate a password for custmer"""
@@ -43,3 +50,6 @@ class Customer():
             num = random.randint(0,index)
             code += all_code[num]
         return code
+    
+    def returnBike(self):
+        """Functon for rerurn a Bike"""
