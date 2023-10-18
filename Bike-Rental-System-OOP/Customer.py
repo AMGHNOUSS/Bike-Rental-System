@@ -17,10 +17,11 @@ class Customer():
             self.rentalBasis = 20
         elif rb == 4:
             self.rentalBasis = 60
-        bikes = input("How many bikes would you like to rent?")
+        bikes = int(input("How many bikes would you like to rent? "))
         
         if bikes <= 0:
             print("That's not a positive integer!")
+            return None
         else:
             self.bikes = bikes
             self.fullName = str(input("Your full name: "))
