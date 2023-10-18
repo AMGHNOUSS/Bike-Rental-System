@@ -37,7 +37,6 @@ if __name__ == "__main__":
             listCustomer.append(customer)
             rb.rentBikeOnWeekly(customer['bikes'], customer['rentalTime'])
         elif choix == 5:
-            print(listCustomer)
             rem = cus.returnBike(listCustomer)
             if rem:
                 listCustomer.pop(rem[0])
