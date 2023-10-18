@@ -25,15 +25,15 @@ if __name__ == "__main__":
         elif choix == 2:
             customer = cus.requestBike(choix)
             listCustomer.append(customer)
-            rb.rentBikeOnHourly(customer['bikes'])
+            rb.rentBikeOnHourly(customer['bikes'], customer['rentalTime'])
         elif choix == 3:
             customer = cus.requestBike(choix)
             listCustomer.append(customer)
-            rb.rentBikeOnDaily(customer['bikes'])
+            rb.rentBikeOnDaily(customer['bikes'], customer['rentalTime'])
         elif choix == 4:
             customer = cus.requestBike(choix)
             listCustomer.append(customer)
-            rb.rentBikeOnWeekly(customer['bikes'])
+            rb.rentBikeOnWeekly(customer['bikes'], customer['rentalTime'])
         elif choix == 5:
             pass
         elif choix == 6:
