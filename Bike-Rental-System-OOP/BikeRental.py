@@ -14,10 +14,7 @@ class BikeRental():
 
     def rentBikeOnHourly(self, n):
         """Rent a bike on hourly basis"""
-        if (n <= 0):
-            print("The number should be positive.")
-            return False
-        elif (n > self.stock):
+        if (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
@@ -31,10 +28,7 @@ class BikeRental():
     
     def rentBikeOnDaily(self, n):
         """Rent a bike on daily basis"""
-        if (n <= 0):
-            print("The number should be positive.")
-            return False
-        elif (n > self.stock):
+        if (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
@@ -48,10 +42,7 @@ class BikeRental():
     
     def rentBikeOnWeekly(self, n):
         """Rent a bike on weekly basis"""
-        if (n <= 0):
-            print("The number should be positive.")
-            return False
-        elif (n > self.stock):
+        if (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
