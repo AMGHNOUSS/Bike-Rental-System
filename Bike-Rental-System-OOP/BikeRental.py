@@ -11,6 +11,7 @@ class BikeRental():
     def displaystock(self):
         """Display content of bikes"""
         print(f"We have currently {self.stock} bikes available to rent.")
+        return self.stock
 
     def rentBikeOnHourly(self, n, dt):
         """Rent a bike on hourly basis"""
@@ -23,6 +24,7 @@ class BikeRental():
             print("We hope that you enjoy our service.\n")
             
             self.stock -= n
+            return True
     
     def rentBikeOnDaily(self, n, dt):
         """Rent a bike on daily basis"""
@@ -35,6 +37,7 @@ class BikeRental():
             print("We hope that you enjoy our service.\n")
             
             self.stock -= n
+            return True
     
     def rentBikeOnWeekly(self, n, dt):
         """Rent a bike on weekly basis"""
@@ -47,6 +50,7 @@ class BikeRental():
             print("We hope that you enjoy our service.\n")
             
             self.stock -= n
+            return True
     
     def returnBike(self, numOfBike, rentBaisis, dtOld):
         """Reuturn a bike """
