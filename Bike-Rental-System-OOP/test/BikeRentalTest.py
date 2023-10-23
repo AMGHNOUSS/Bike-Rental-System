@@ -48,3 +48,9 @@ class BikeRentalTest(unittest.TestCase):
         dt = datetime.datetime.now()
         self.assertEqual(bk.rentBikeOnDailyBasis(-1, dt), False)
     
+    def test_rentBikeOnDaily_for_number_negative(self):
+        """Rent some bikes on Daily basis"""
+        bk = BikeRental()
+        dt = datetime.datetime.now()
+        self.assertEqual(bk.rentBikeOnDailyBasis(-1, dt), False)
+    
