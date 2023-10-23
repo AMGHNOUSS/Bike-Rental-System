@@ -11,7 +11,8 @@ class BikeRentalTest(unittest.TestCase):
         """100 bikes"""
         bk = BikeRental()
         self.assertEqual(bk.displaystock(), 100)
-    
+
+    # On Hourly    
     def test_rentBikeOnHourly(self):
         """Rent some bikes on hourly basis"""
         bk = BikeRental()
@@ -42,6 +43,7 @@ class BikeRentalTest(unittest.TestCase):
         dt = datetime.datetime.now()
         self.assertEqual(bk.rentBikeOnHourlyBasis(101, dt), False)
 
+    # On Daily
     def test_rentBikeOnDaily(self):
         """Rent some bikes on Daily basis"""
         bk = BikeRental()
@@ -71,3 +73,11 @@ class BikeRentalTest(unittest.TestCase):
         bk = BikeRental()
         dt = datetime.datetime.now()
         self.assertEqual(bk.rentBikeOnDailyBasis(101, dt), False)
+    
+    # On Weekly
+
+    def test_rentBikeOnWeekly(self):
+        """Rent some bikes on Weekly basis"""
+        bk = BikeRental()
+        dt = datetime.datetime.now()
+        self.assertEqual(bk.rentBikeOnWeeklyBasis(-1, dt), False)
