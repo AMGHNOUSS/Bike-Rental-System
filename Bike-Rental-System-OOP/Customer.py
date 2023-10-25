@@ -9,7 +9,7 @@ class Customer():
     def __init__(self):
         """Constructor"""
 
-    def requestBike(self, rb):
+    def requestBike(self, rb, bikes = 0):
         """Request a Bike"""
         if  rb == 2:
             self.rentalBasis = 5
@@ -17,7 +17,6 @@ class Customer():
             self.rentalBasis = 20
         elif rb == 4:
             self.rentalBasis = 60
-        bikes = int(input("How many bikes would you like to rent? "))
         
         if bikes <= 0:
             print("That's not a positive integer!")
