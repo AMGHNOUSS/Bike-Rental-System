@@ -1,16 +1,22 @@
 #!/usr/bin/python3
 
-from  BikeRental import BikeRental
+import BikeRental
 import unittest
 import datetime
 
 class BikeRentalTest(unittest.TestCase):
     """Class Test For class BikeRental"""
 
+    def setUp(self):
+        bk = BikeRental()
+    
+    def tearDown(self) -> None:
+        print('Finish testing')
+
     def test_displaystock(self):
         """100 bikes"""
-        bk = BikeRental()
-        self.assertEqual(bk.displaystock(), 100)
+        self.assertEqual(self.bk.displaystock(), 100)
+
 
     # On Hourly    
     def test_rentBikeOnHourly(self):
