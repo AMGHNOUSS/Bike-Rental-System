@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from BikeRental import BikeRental
+from Customer import Customer
 import unittest
 import datetime
 
@@ -10,6 +11,7 @@ class BikeRentalTest(unittest.TestCase):
     def setUp(self):
         self.bk = BikeRental()
         self.dt = datetime.datetime.now()
+        self.cus = Customer()
     
     def tearDown(self) -> None:
         print('Finish testing')
@@ -81,3 +83,6 @@ class BikeRentalTest(unittest.TestCase):
         """Rent some bikes on Weekly basis"""
         self.assertEqual(self.bk.rentBikeOnWeekly(101, self.dt), False)
     
+    def test_returnBike(self):
+        """Return a Bike"""
+        self.assertEquals(self.bk.returnBike(), )
