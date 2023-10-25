@@ -25,15 +25,18 @@ if __name__ == "__main__":
         if choix == 1:
             rb.displaystock()
         elif choix == 2:
-            customer = cus.requestBike(choix)
+            bikes = int(input("How many bikes would you like to rent? "))
+            customer = cus.requestBike(choix, bikes)
             listCustomer.append(customer)
             rb.rentBikeOnHourly(customer['bikes'], customer['rentalTime'])
         elif choix == 3:
-            customer = cus.requestBike(choix)
+            bikes = int(input("How many bikes would you like to rent? "))
+            customer = cus.requestBike(choix, bikes)
             listCustomer.append(customer)
             rb.rentBikeOnDaily(customer['bikes'], customer['rentalTime'])
         elif choix == 4:
-            customer = cus.requestBike(choix)
+            bikes = int(input("How many bikes would you like to rent? "))
+            customer = cus.requestBike(choix, bikes)
             listCustomer.append(customer)
             rb.rentBikeOnWeekly(customer['bikes'], customer['rentalTime'])
         elif choix == 5:
