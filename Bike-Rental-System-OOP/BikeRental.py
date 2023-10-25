@@ -15,7 +15,9 @@ class BikeRental():
 
     def rentBikeOnHourly(self, n, dt):
         """Rent a bike on hourly basis"""
-        if (n > self.stock):
+        if n <= 0:
+            return False 
+        elif (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
@@ -28,7 +30,10 @@ class BikeRental():
     
     def rentBikeOnDaily(self, n, dt):
         """Rent a bike on daily basis"""
-        if (n > self.stock):
+        
+        if n <= 0:
+            return False 
+        elif (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
@@ -41,7 +46,10 @@ class BikeRental():
     
     def rentBikeOnWeekly(self, n, dt):
         """Rent a bike on weekly basis"""
-        if (n > self.stock):
+        
+        if n <= 0:
+            return False 
+        elif (n > self.stock):
             print(f"Sorry! We have currently {self.stock} bikes available to rent.")
             return False
         else:
