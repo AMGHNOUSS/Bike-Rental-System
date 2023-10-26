@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-from BikeRental import BikeRental
 from Customer import Customer
 import unittest
 import datetime
@@ -23,6 +22,7 @@ class CustomerTest(unittest.TestCase):
     def test_returnBike(self):
         """test for return a bike"""
         dt = datetime.datetime.now()
+        list_ = []
         dict = {
                 'fullName': "redouane amghnouss",
                 'password': 1234,
@@ -30,4 +30,5 @@ class CustomerTest(unittest.TestCase):
                 'rentalTime': dt,
                 'rentalBasis': 20
             }
-        self.assertEqual(self.cus.returnBike(dict, 'redouane amghnouss', 1234), (0 , 2, 20, dt))
+        list_.append(dict)
+        self.assertEqual(self.cus.returnBike(list_), [0, 2, 20, dt])
