@@ -32,3 +32,17 @@ class CustomerTest(unittest.TestCase):
             }
         list_.append(dict)
         self.assertEqual(self.cus.returnBike(list_), [0, 2, 20, dt])
+    
+    def test_returnBikeNone(self):
+        """test for return a bike"""
+        dt = datetime.datetime.now()
+        list_ = []
+        dict = {
+                'fullName': "redouane amghnouss",
+                'password': 1234,
+                'bikes': 2,
+                'rentalTime': dt,
+                'rentalBasis': 20
+            }
+        list_.append(dict)
+        self.assertEqual(self.cus.returnBike(list_), None)
